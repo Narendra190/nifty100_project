@@ -1,33 +1,53 @@
 import pandas as pd
 import os
 
-processed_folder = "data/processed"
 
-failures = []
+def validate_dataframe(df):
+    """
+    Validate a dataframe and return missing values and duplicate rows.
+    """
+    missing = df.isnull().sum().sum()
+    duplicates = df.duplicated().sum()
 
-for file in os.listdir(processed_folder):
+    return {
+        "missing_values": missing,
+        "duplicate_rows": duplicates
+    }
 
-    if file.endswith(".xlsx"):
 
-        df = pd.read_excel(os.path.join(processed_folder, file))
+def validate_file(file_path):
+    """
+    Validate a single Excel file.
+    """
+    df = pd.read_excel(file_path)
+    return validate_dataframe(df)
 
-        missing = df.isnull().sum().sum()
 
-        duplicates = df.duplicated().sum()
+def validate_all(processed_folder="data/processed",
+                 output_file="output/validation_failures.xlsx"):
 
-        failures.append({
-            "file": file,
-            "missing_values": missing,
-            "duplicate_rows": duplicates
-        })
+    failures = []
 
-result = pd.DataFrame(failures)
+    for file in os.listdir(processed_folder):
 
-result.to_excel(
-    "output/validation_failures.xlsx",
-    index=False,
-    columns=["file", "missing_values", "duplicate_rows"]
-)
+        if file.endswith(".xlsx"):
 
-print(result)
-print("Validation completed!")
+            result = validate_file(
+                os.path.join(processed_folder, file)
+            )
+
+            result["file"] = file
+
+            failures.append(result)
+
+    result_df = pd.DataFrame(failures)
+
+    result_df.to_excel(output_file, index=False)
+
+    print(result_df)
+
+    print("Validation completed!")
+
+
+if __name__ == "__main__":
+    validate_all()
