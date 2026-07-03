@@ -6,11 +6,6 @@ sys.path.insert(0, os.path.abspath("src"))
 
 from normalizer import normalize_columns, remove_duplicates
 
-
-# -------------------------------
-# normalize_columns() Tests
-# -------------------------------
-
 def test_columns_lowercase():
     df = pd.DataFrame(columns=["Name", "AGE"])
     df = normalize_columns(df)

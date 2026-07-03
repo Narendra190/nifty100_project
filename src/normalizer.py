@@ -18,16 +18,10 @@ def normalize_columns(df):
 
 
 def remove_duplicates(df):
-    """
-    Remove duplicate rows.
-    """
     return df.drop_duplicates()
 
 
 def process_file(input_file, output_file):
-    """
-    Read, clean and save an Excel file.
-    """
     df = pd.read_excel(input_file)
 
     df = normalize_columns(df)
