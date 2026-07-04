@@ -1,0 +1,117 @@
+company,metric,difference,category
+ABB,ROCE,23.59,Version Difference
+ABB,ROE,12.49,Data Source Issue
+ADANIENSOL,ROCE,9.0,Version Difference
+ADANIENSOL,ROE,8.59,Data Source Issue
+ADANIENT,ROCE,5.91,Version Difference
+ADANIENT,ROE,7.95,Data Source Issue
+ADANIGREEN,ROCE,100.41,Version Difference
+ADANIGREEN,ROE,18.61,Data Source Issue
+ADANIPORTS,ROCE,12.73,Version Difference
+ADANIPORTS,ROE,7.53,Data Source Issue
+ADANIPOWER,ROCE,85.66,Version Difference
+ADANIPOWER,ROE,110.56,Data Source Issue
+AMBUJACEM,ROE,5.45,Data Source Issue
+APOLLOHOSP,ROCE,6.17,Version Difference
+ASIANPAINT,ROCE,7.47,Version Difference
+AXISBANK,ROCE,8.56,Version Difference
+BAJAJ-AUTO,ROCE,5.35,Version Difference
+BAJAJ-AUTO,ROE,12.35,Data Source Issue
+BAJAJFINSV,ROCE,7.24,Version Difference
+BAJAJFINSV,ROE,16.66,Data Source Issue
+BAJFINANCE,ROCE,6.81,Version Difference
+BANKBARODA,ROCE,8.18,Version Difference
+BEL,ROCE,15148.73,Version Difference
+BEL,ROE,15157.03,Data Source Issue
+BHARTIARTL,ROCE,8.6,Version Difference
+BHARTIARTL,ROE,10.4,Data Source Issue
+BHEL,ROCE,18.63,Version Difference
+BHEL,ROE,20.86,Data Source Issue
+BPCL,ROCE,20.56,Version Difference
+BPCL,ROE,30.36,Data Source Issue
+BRITANNIA,ROE,10.51,Data Source Issue
+CANBK,ROCE,5.27,Version Difference
+CANBK,ROE,6.0,Data Source Issue
+CHOLAFIN,ROCE,5.38,Version Difference
+CIPLA,ROCE,5.67,Version Difference
+COALINDIA,ROCE,27.79,Version Difference
+COALINDIA,ROE,16.19,Data Source Issue
+DABUR,ROCE,14.26,Version Difference
+DABUR,ROE,17.36,Data Source Issue
+DIVISLAB,ROCE,7.57,Version Difference
+DIVISLAB,ROE,11.87,Data Source Issue
+DMART,ROCE,7.49,Version Difference
+GODREJCP,ROE,18.74,Data Source Issue
+GRASIM,ROCE,9.92,Version Difference
+GRASIM,ROE,12.32,Data Source Issue
+HAL,ROCE,1928.02,Version Difference
+HAL,ROE,1938.02,Data Source Issue
+HAVELLS,ROCE,15.89,Version Difference
+HAVELLS,ROE,22.29,Data Source Issue
+HCLTECH,ROE,7.39,Data Source Issue
+HDFCBANK,ROCE,11.17,Version Difference
+HDFCLIFE,ROCE,26.82,Version Difference
+HDFCLIFE,ROE,22.03,Data Source Issue
+HEROMOTOCO,ROCE,8.28,Version Difference
+HEROMOTOCO,ROE,15.38,Data Source Issue
+HINDUNILVR,ROCE,106.8,Version Difference
+HINDUNILVR,ROE,113.8,Data Source Issue
+ICICIBANK,ROCE,7.13,Version Difference
+ICICIPRULI,ROCE,29.5,Version Difference
+ICICIPRULI,ROE,30.18,Data Source Issue
+INDIGO,ROCE,17861.86,Version Difference
+INDUSINDBK,ROCE,5.98,Version Difference
+INFY,ROCE,15.18,Version Difference
+INFY,ROE,6.98,Data Source Issue
+IOC,ROCE,15.56,Version Difference
+IOC,ROE,19.69,Data Source Issue
+IRCTC,ROCE,24.3,Version Difference
+IRCTC,ROE,10.9,Data Source Issue
+IRFC,ROE,6.33,Data Source Issue
+JSWENERGY,ROCE,5.93,Version Difference
+JSWENERGY,ROE,6.12,Data Source Issue
+JSWSTEEL,ROCE,7.92,Version Difference
+JSWSTEEL,ROE,6.22,Data Source Issue
+KOTAKBANK,ROCE,6.8,Version Difference
+LICI,ROCE,260.53,Version Difference
+LICI,ROE,260.71,Data Source Issue
+LODHA,ROCE,6.59,Version Difference
+LODHA,ROE,6.99,Data Source Issue
+LT,ROCE,377.97,Version Difference
+LT,ROE,384.66,Data Source Issue
+LTIM,ROCE,7.87,Version Difference
+LTIM,ROE,15.93,Data Source Issue
+M&M,ROCE,6.29,Version Difference
+MARUTI,ROCE,10.69,Version Difference
+MOTHERSON,ROCE,6.05,Version Difference
+MOTHERSON,ROE,7.95,Data Source Issue
+NAUKRI,ROCE,8.85,Version Difference
+NAUKRI,ROE,10.06,Data Source Issue
+NESTLEIND,ROCE,138.26,Version Difference
+NESTLEIND,ROE,88.44,Data Source Issue
+PFC,ROCE,8.78,Version Difference
+PNB,ROCE,810.67,Version Difference
+PNB,ROE,803.6,Data Source Issue
+RECLTD,ROCE,11.87,Version Difference
+SBILIFE,ROCE,9.83,Version Difference
+SBILIFE,ROE,11.03,Data Source Issue
+SHREECEM,ROCE,11.32,Version Difference
+SHREECEM,ROE,13.92,Data Source Issue
+SHRIRAMFIN,ROCE,8.64,Version Difference
+SUNPHARMA,ROCE,5.84,Version Difference
+SUNPHARMA,ROE,6.44,Data Source Issue
+TATAMOTORS,ROCE,6.41,Version Difference
+TATAMOTORS,ROE,22.89,Data Source Issue
+TATAPOWER,ROCE,10.1,Version Difference
+TATAPOWER,ROE,10.3,Data Source Issue
+TATASTEEL,ROCE,28.3,Version Difference
+TATASTEEL,ROE,27.83,Data Source Issue
+TCS,ROCE,27.78,Version Difference
+TCS,ROE,36.0,Data Source Issue
+TECHM,ROCE,12.19,Version Difference
+TECHM,ROE,15.46,Data Source Issue
+TITAN,ROCE,14.1,Version Difference
+TORNTPHARM,ROCE,7.39,Version Difference
+TORNTPHARM,ROE,6.39,Data Source Issue
+TRENT,ROCE,25.99,Version Difference
+TRENT,ROE,29.39,Data Source Issue
