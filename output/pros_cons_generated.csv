@@ -1,0 +1,540 @@
+company_id,type,rule_id,text,confidence_pct
+ABB,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ABB,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ABB,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,75
+ABB,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+ABB,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+ABB,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+ABB,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+ABB,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+ADANIENSOL,con,C1,Debt-to-equity ratio of ADANIENSOL is elevated for a non-financial company and warrants monitoring,85
+ADANIENSOL,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+ADANIENSOL,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ADANIENSOL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ADANIENSOL,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,75
+ADANIENT,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+ADANIENT,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ADANIENT,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ADANIENT,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,70
+ADANIGREEN,con,C1,Debt-to-equity ratio of ADANIGREEN is elevated for a non-financial company and warrants monitoring,85
+ADANIGREEN,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ADANIGREEN,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ADANIGREEN,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+ADANIPORTS,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ADANIPORTS,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ADANIPORTS,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+ADANIPORTS,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+ADANIPORTS,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+ADANIPOWER,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ADANIPOWER,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ADANIPOWER,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,85
+ADANIPOWER,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+ADANIPOWER,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+ADANIPOWER,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+ADANIPOWER,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,78
+AMBUJACEM,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+AMBUJACEM,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+AMBUJACEM,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+APOLLOHOSP,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+APOLLOHOSP,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+APOLLOHOSP,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+APOLLOHOSP,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+ASIANPAINT,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ASIANPAINT,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ASIANPAINT,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+ASIANPAINT,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,69
+ASIANPAINT,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+ASIANPAINT,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+ASIANPAINT,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+ASIANPAINT,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+ATGL,con,C0,Company requires ongoing monitoring of financial resilience and execution risk,65
+ATGL,pro,P0,Company demonstrates stable business fundamentals and operating consistency,65
+AXISBANK,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+AXISBANK,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+AXISBANK,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,76
+BAJAJ-AUTO,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+BAJAJ-AUTO,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BAJAJ-AUTO,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+BAJAJ-AUTO,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,64
+BAJAJ-AUTO,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+BAJAJ-AUTO,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+BAJAJ-AUTO,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+BAJAJFINSV,con,C1,Debt-to-equity ratio of BAJAJFINSV is elevated for a non-financial company and warrants monitoring,85
+BAJAJFINSV,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+BAJAJFINSV,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BAJAJFINSV,con,C2,Free cash flow negative for 3 consecutive years raises concern about cash generation quality,90
+BAJAJFINSV,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+BAJAJFINSV,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,66
+BAJAJFINSV,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,79
+BAJAJHLDNG,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BAJAJHLDNG,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,70
+BAJAJHLDNG,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+BAJAJHLDNG,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+BAJAJHLDNG,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+BAJAJHLDNG,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+BAJAJHLDNG,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+BAJFINANCE,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+BAJFINANCE,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BAJFINANCE,con,C2,Free cash flow negative for 3 consecutive years raises concern about cash generation quality,90
+BAJFINANCE,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+BAJFINANCE,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,67
+BAJFINANCE,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+BANKBARODA,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+BANKBARODA,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BANKBARODA,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+BANKBARODA,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+BANKBARODA,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,80
+BEL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BEL,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,95
+BEL,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+BEL,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+BHARTIARTL,con,C1,Debt-to-equity ratio of BHARTIARTL is elevated for a non-financial company and warrants monitoring,85
+BHARTIARTL,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+BHARTIARTL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BHARTIARTL,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+BHARTIARTL,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+BHARTIARTL,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+BHEL,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+BHEL,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+BHEL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BHEL,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+BHEL,pro,P0,Company demonstrates stable business fundamentals and operating consistency,65
+BOSCHLTD,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+BOSCHLTD,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BOSCHLTD,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+BOSCHLTD,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+BOSCHLTD,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+BOSCHLTD,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+BOSCHLTD,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+BOSCHLTD,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+BPCL,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+BPCL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BPCL,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+BPCL,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+BPCL,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+BRITANNIA,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+BRITANNIA,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+BRITANNIA,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,95
+BRITANNIA,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+BRITANNIA,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+BRITANNIA,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+CANBK,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+CANBK,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+CANBK,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+CANBK,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+CANBK,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,87
+CANBK,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+CHOLAFIN,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+CHOLAFIN,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+CHOLAFIN,con,C2,Free cash flow negative for 3 consecutive years raises concern about cash generation quality,90
+CHOLAFIN,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+CHOLAFIN,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+CHOLAFIN,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,65
+CHOLAFIN,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+CIPLA,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+CIPLA,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+CIPLA,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+CIPLA,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+CIPLA,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+CIPLA,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+CIPLA,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+CIPLA,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+COALINDIA,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+COALINDIA,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+COALINDIA,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+COALINDIA,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,95
+COALINDIA,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+COALINDIA,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+COALINDIA,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+COALINDIA,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+DABUR,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+DABUR,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+DABUR,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+DABUR,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+DABUR,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+DABUR,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+DIVISLAB,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+DIVISLAB,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+DIVISLAB,con,C9,Earnings per share declining for 3 consecutive years reflects deteriorating profitability,85
+DIVISLAB,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+DIVISLAB,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,65
+DIVISLAB,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+DIVISLAB,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+DLF,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+DLF,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+DLF,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+DLF,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,70
+DLF,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+DLF,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,73
+DLF,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+DMART,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+DMART,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+DMART,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+DRREDDY,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+DRREDDY,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+DRREDDY,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+DRREDDY,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+DRREDDY,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,65
+DRREDDY,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+DRREDDY,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+EICHERMOT,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+EICHERMOT,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+EICHERMOT,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+EICHERMOT,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+EICHERMOT,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+EICHERMOT,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,62
+EICHERMOT,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+EICHERMOT,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+GAIL,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+GAIL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+GAIL,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+GAIL,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+GAIL,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+GODREJCP,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+GODREJCP,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+GODREJCP,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+GODREJCP,con,C4,Company reported a net loss in the most recent financial year,93
+GODREJCP,pro,P0,Company demonstrates stable business fundamentals and operating consistency,65
+GRASIM,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+GRASIM,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+GRASIM,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+GRASIM,con,C9,Earnings per share declining for 3 consecutive years reflects deteriorating profitability,85
+GRASIM,pro,P0,Company demonstrates stable business fundamentals and operating consistency,65
+HAL,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+HAL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+HAL,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+HAL,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,95
+HAL,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,71
+HAL,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+HAL,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+HAVELLS,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+HAVELLS,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+HAVELLS,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+HAVELLS,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+HCLTECH,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+HCLTECH,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+HCLTECH,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+HCLTECH,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,64
+HCLTECH,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+HCLTECH,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+HCLTECH,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+HCLTECH,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+HDFCBANK,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+HDFCBANK,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+HDFCBANK,con,C6,Interest coverage ratio below 1.5x indicates the company is at risk of not meeting its debt obligations,90
+HDFCBANK,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+HDFCBANK,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+HDFCLIFE,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+HDFCLIFE,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+HDFCLIFE,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,70
+HDFCLIFE,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+HDFCLIFE,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+HEROMOTOCO,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+HEROMOTOCO,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+HEROMOTOCO,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+HEROMOTOCO,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+HEROMOTOCO,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+HEROMOTOCO,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+HEROMOTOCO,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+HEROMOTOCO,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+HINDALCO,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+HINDALCO,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+HINDALCO,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+HINDALCO,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+HINDALCO,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+HINDALCO,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+HINDUNILVR,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+HINDUNILVR,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+HINDUNILVR,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+HINDUNILVR,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+HINDUNILVR,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+HINDUNILVR,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+HINDUNILVR,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+ICICIBANK,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ICICIBANK,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ICICIBANK,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+ICICIBANK,con,C6,Interest coverage ratio below 1.5x indicates the company is at risk of not meeting its debt obligations,90
+ICICIBANK,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+ICICIBANK,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+ICICIBANK,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+ICICIGI,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ICICIGI,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+ICICIGI,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+ICICIGI,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+ICICIGI,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+ICICIGI,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+ICICIGI,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+ICICIGI,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+ICICIPRULI,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+ICICIPRULI,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ICICIPRULI,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ICICIPRULI,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+ICICIPRULI,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+ICICIPRULI,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+ICICIPRULI,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+INDIGO,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+INDIGO,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+INDIGO,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+INDIGO,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+INDIGO,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+INDIGO,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+INDUSINDBK,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+INDUSINDBK,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+INDUSINDBK,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+INDUSINDBK,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,70
+INDUSINDBK,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,82
+INFY,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+INFY,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+INFY,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+INFY,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,76
+INFY,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+INFY,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+IOC,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+IOC,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+IOC,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+IOC,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+IRCTC,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+IRCTC,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+IRCTC,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,85
+IRCTC,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+IRCTC,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,75
+IRCTC,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+IRCTC,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+IRFC,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+IRFC,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+IRFC,con,C6,Interest coverage ratio below 1.5x indicates the company is at risk of not meeting its debt obligations,90
+IRFC,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+IRFC,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+IRFC,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+ITC,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ITC,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ITC,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,70
+ITC,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+ITC,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+ITC,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+ITC,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,79
+ITC,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+ITC,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+JINDALSTEL,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+JINDALSTEL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+JINDALSTEL,pro,P0,Company demonstrates stable business fundamentals and operating consistency,65
+JIOFIN,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+JIOFIN,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+JIOFIN,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+JIOFIN,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+JIOFIN,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+JIOFIN,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+JSWENERGY,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+JSWENERGY,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+JSWENERGY,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+JSWENERGY,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+JSWENERGY,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+JSWSTEEL,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+JSWSTEEL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+JSWSTEEL,pro,P0,Company demonstrates stable business fundamentals and operating consistency,65
+KOTAKBANK,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+KOTAKBANK,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+KOTAKBANK,con,C6,Interest coverage ratio below 1.5x indicates the company is at risk of not meeting its debt obligations,90
+KOTAKBANK,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,70
+KOTAKBANK,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+LICI,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+LICI,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,95
+LICI,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+LICI,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+LICI,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+LICI,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+LODHA,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+LODHA,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+LODHA,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+LODHA,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+LODHA,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,61
+LT,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+LT,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+LT,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+LT,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+LT,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,95
+LT,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+LT,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+LTIM,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+LTIM,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+LTIM,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+LTIM,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+LTIM,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,69
+LTIM,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+LTIM,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+LTIM,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+M&M,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+M&M,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+M&M,pro,P0,Company demonstrates stable business fundamentals and operating consistency,65
+MARUTI,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+MARUTI,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+MARUTI,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+MARUTI,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+MARUTI,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+MARUTI,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+MARUTI,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+MARUTI,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+MOTHERSON,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+MOTHERSON,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+MOTHERSON,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,70
+MOTHERSON,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+MOTHERSON,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+NAUKRI,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+NAUKRI,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+NAUKRI,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+NAUKRI,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+NAUKRI,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+NAUKRI,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,65
+NAUKRI,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+NESTLEIND,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+NESTLEIND,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+NESTLEIND,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,95
+NESTLEIND,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+NESTLEIND,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+NESTLEIND,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+NHPC,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+NHPC,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+NHPC,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+NHPC,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+NHPC,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+NHPC,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+NHPC,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+NTPC,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+NTPC,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+NTPC,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,66
+NTPC,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+ONGC,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ONGC,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ONGC,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+ONGC,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+ONGC,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+PFC,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+PFC,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+PFC,con,C6,Interest coverage ratio below 1.5x indicates the company is at risk of not meeting its debt obligations,90
+PFC,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,69
+PFC,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,79
+PIDILITIND,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+PIDILITIND,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+PIDILITIND,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+PIDILITIND,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+PIDILITIND,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+PNB,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+PNB,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,95
+POWERGRID,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+POWERGRID,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+POWERGRID,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+POWERGRID,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+POWERGRID,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+POWERGRID,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+RECLTD,con,C1,Debt-to-equity ratio of RECLTD is elevated for a non-financial company and warrants monitoring,85
+RECLTD,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+RECLTD,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+RECLTD,con,C2,Free cash flow negative for 3 consecutive years raises concern about cash generation quality,90
+RECLTD,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,95
+RELIANCE,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+RELIANCE,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+RELIANCE,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+RELIANCE,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+RELIANCE,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+SBILIFE,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+SBILIFE,pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden,95
+SBILIFE,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+SBIN,con,C0,Company requires ongoing monitoring of financial resilience and execution risk,65
+SBIN,pro,P0,Company demonstrates stable business fundamentals and operating consistency,65
+SHREECEM,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+SHREECEM,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+SHREECEM,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+SHREECEM,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+SHREECEM,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+SHREECEM,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+SHRIRAMFIN,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+SHRIRAMFIN,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+SHRIRAMFIN,con,C2,Free cash flow negative for 3 consecutive years raises concern about cash generation quality,90
+SHRIRAMFIN,con,C6,Interest coverage ratio below 1.5x indicates the company is at risk of not meeting its debt obligations,90
+SHRIRAMFIN,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+SHRIRAMFIN,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,66
+SIEMENS,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+SIEMENS,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+SIEMENS,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+SIEMENS,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+SIEMENS,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+SUNPHARMA,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+SUNPHARMA,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+SUNPHARMA,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+SUNPHARMA,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,63
+SUNPHARMA,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+SUNPHARMA,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+TATACONSUM,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+TATACONSUM,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TATACONSUM,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TATACONSUM,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+TATACONSUM,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+TATACONSUM,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+TATACONSUM,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+TATAMOTORS,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TATAMOTORS,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TATAMOTORS,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+TATAMOTORS,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+TATAMOTORS,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+TATAPOWER,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TATAPOWER,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TATAPOWER,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+TATASTEEL,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+TATASTEEL,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TATASTEEL,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TATASTEEL,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+TATASTEEL,con,C4,Company reported a net loss in the most recent financial year,93
+TATASTEEL,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+TATASTEEL,con,C9,Earnings per share declining for 3 consecutive years reflects deteriorating profitability,85
+TATASTEEL,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+TCS,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TCS,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TCS,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,95
+TCS,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+TCS,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+TCS,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,63
+TCS,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+TCS,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+TECHM,con,C10,Return on capital employed below 10% suggests the business is not generating sufficient returns on invested capital,88
+TECHM,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TECHM,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TECHM,con,C3,Operating margins declining for 3 consecutive years suggest pricing or cost pressure,82
+TECHM,con,C7,"Dividend payout ratio above 100% means the company is paying dividends from reserves, which is unsustainable",92
+TECHM,con,C9,Earnings per share declining for 3 consecutive years reflects deteriorating profitability,85
+TECHM,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+TECHM,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+TECHM,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+TITAN,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TITAN,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TITAN,con,C8,Rising debt-to-equity ratio over 3 years suggests increasing financial leverage risk,84
+TITAN,pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency,74
+TITAN,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+TITAN,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+TORNTPHARM,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TORNTPHARM,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TORNTPHARM,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+TORNTPHARM,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+TORNTPHARM,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+TORNTPHARM,pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline,70
+TORNTPHARM,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+TRENT,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TRENT,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TRENT,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+TRENT,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+TRENT,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+TVSMOTOR,con,C1,Debt-to-equity ratio of TVSMOTOR is elevated for a non-financial company and warrants monitoring,85
+TVSMOTOR,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+TVSMOTOR,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+TVSMOTOR,con,C2,Free cash flow negative for 3 consecutive years raises concern about cash generation quality,90
+TVSMOTOR,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,78
+TVSMOTOR,pro,P12,Growing asset base funded by internal accruals reflects self-sustaining growth,78
+ULTRACEMCO,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+ULTRACEMCO,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+ULTRACEMCO,pro,P2,Strong free cash flow generation over 5 years signals healthy business fundamentals,105
+ULTRACEMCO,pro,P7,Very high interest coverage ratio reflects negligible financial stress from debt servicing,90
+ULTRACEMCO,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
+UNIONBANK,con,C11,Net debt exceeding 3 times EBITDA is a high leverage ratio and limits financial flexibility,80
+UNIONBANK,con,C12,Revenue growing at below 5% over 5 years lags inflation and suggests limited business momentum,82
+UNIONBANK,con,C6,Interest coverage ratio below 1.5x indicates the company is at risk of not meeting its debt obligations,90
+UNIONBANK,pro,P10,Return on equity improving for 3 consecutive years shows strengthening business quality,70
+UNIONBANK,pro,P8,Consistent dividend yield above 2% backed by positive free cash flow,85
