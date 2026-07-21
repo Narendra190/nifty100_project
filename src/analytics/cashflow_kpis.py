@@ -76,6 +76,11 @@ def capital_allocation_pattern(cfo, cfi, cff, cfo_pat_ratio=1):
         ("+", "-", "+"): "Mixed",
     }
 
+    if signs == ("-", "-", "+"):
+        return cfo_sign, cfi_sign, cff_sign, "Growth Funded by Debt"
+    if signs == ("-", "+", "+"):
+        return cfo_sign, cfi_sign, cff_sign, "Distress Signal"
+
     return (
         cfo_sign,
         cfi_sign,
@@ -86,6 +91,176 @@ def capital_allocation_pattern(cfo, cfi, cff, cfo_pat_ratio=1):
 
 def export_capital_allocation(df, output_file="output/capital_allocation.csv"):
     df.to_csv(output_file, index=False)
+
+
+def _normalize_year_label(value) -> str:
+    if value is None:
+        return ""
+    text = str(value).strip()
+    if not text:
+        return ""
+
+    if len(text) >= 4 and text[-4:].isdigit():
+        return text[-4:]
+
+    import re
+    match = re.search(r'(\d{4})', text)
+    if match:
+        return match.group(1)
+
+    match = re.search(r'(\d{2})', text)
+    if match:
+        year_value = int(match.group(1))
+        return str(2000 + year_value if year_value < 100 else year_value)
+
+    try:
+        return str(pd.to_datetime(text, errors='coerce').year)
+    except Exception:
+        return text
+
+
+def summarize_pattern_distribution(report: pd.DataFrame, latest_year: Optional[str] = None) -> dict:
+    if report.empty:
+        return {}
+
+    report = report.copy()
+    report["year"] = report["year"].apply(_normalize_year_label)
+
+    if latest_year is None:
+        latest_year = str(report["year"].max())
+
+    latest = report[report["year"] == latest_year]
+    if latest.empty:
+        latest = report.sort_values("year").groupby("company_id").tail(1).reset_index(drop=True)
+
+    latest = latest.drop_duplicates(subset=["company_id"])
+
+    patterns = [
+        "Reinvestor",
+        "Shareholder Returns",
+        "Liquidating Assets",
+        "Distress Signal",
+        "Growth Funded by Debt",
+        "Cash Accumulator",
+        "Pre-Revenue",
+        "Mixed",
+    ]
+
+    summary = {pattern: 0 for pattern in patterns}
+    for pattern in latest["pattern_label"].dropna().tolist():
+        summary[pattern] = summary.get(pattern, 0) + 1
+    return summary
+
+
+def build_pattern_change_report(report: pd.DataFrame) -> pd.DataFrame:
+    if report.empty:
+        return pd.DataFrame(columns=["company_id", "year_from", "year_to", "pattern_from", "pattern_to", "change_summary"])
+
+    report = report.copy()
+    report["year"] = report["year"].apply(_normalize_year_label)
+    report = report.sort_values(["company_id", "year"]).reset_index(drop=True)
+
+    changes = []
+    for company_id, company_rows in report.groupby("company_id"):
+        if len(company_rows) < 2:
+            continue
+
+        for idx in range(1, len(company_rows)):
+            previous = company_rows.iloc[idx - 1]
+            current = company_rows.iloc[idx]
+            if previous.get("pattern_label") != current.get("pattern_label"):
+                change_summary = f"{company_id}: {previous.get('pattern_label')} -> {current.get('pattern_label')} ({previous['year']} to {current['year']})"
+                changes.append({
+                    "company_id": company_id,
+                    "year_from": previous["year"],
+                    "year_to": current["year"],
+                    "pattern_from": previous.get("pattern_label"),
+                    "pattern_to": current.get("pattern_label"),
+                    "change_summary": change_summary,
+                })
+
+    return pd.DataFrame(changes)
+
+
+def build_capital_allocation_report(
+    cashflow_df: pd.DataFrame,
+    company_ids: Optional[list] = None,
+    years: Optional[list] = None,
+    profit_df: Optional[pd.DataFrame] = None,
+) -> pd.DataFrame:
+    if cashflow_df.empty:
+        return pd.DataFrame(columns=["company_id", "year", "cfo_sign", "cfi_sign", "cff_sign", "pattern_label"])
+
+    cashflow_df = cashflow_df.copy()
+    cashflow_df["company_id"] = cashflow_df["company_id"].astype(str)
+    cashflow_df["year"] = cashflow_df["year"].apply(_normalize_year_label)
+
+    if company_ids is None:
+        company_ids = sorted(set(cashflow_df["company_id"]))
+    else:
+        company_ids = [str(item) for item in company_ids]
+
+    if years is None:
+        years = sorted(set(cashflow_df["year"]))
+    else:
+        years = [str(_normalize_year_label(item)) for item in years]
+
+    if profit_df is not None:
+        profit_df = profit_df.copy()
+        profit_df["company_id"] = profit_df["company_id"].astype(str)
+        profit_df["year"] = profit_df["year"].apply(_normalize_year_label)
+
+    rows = []
+    for company_id in company_ids:
+        for year in years:
+            row = cashflow_df[(cashflow_df["company_id"] == company_id) & (cashflow_df["year"] == year)]
+            if row.empty:
+                cfo = None
+                cfi = None
+                cff = None
+                pattern_label = "Unknown"
+                cfo_sign = "?"
+                cfi_sign = "?"
+                cff_sign = "?"
+            else:
+                values = row.iloc[0]
+                cfo = _safe_numeric(values.get("operating_activity"))
+                cfi = _safe_numeric(values.get("investing_activity"))
+                cff = _safe_numeric(values.get("financing_activity"))
+
+                profit_row = None
+                if profit_df is not None:
+                    profit_matches = profit_df[(profit_df["company_id"] == company_id) & (profit_df["year"] == year)]
+                    if not profit_matches.empty:
+                        profit_row = profit_matches.iloc[0]
+
+                cfo_pat_ratio = 1
+                if profit_row is not None:
+                    pat = _safe_numeric(profit_row.get("net_profit"))
+                    if pat not in [None, 0]:
+                        cfo_pat_ratio = (cfo / pat) if cfo is not None else 1
+
+                cfo_sign, cfi_sign, cff_sign, pattern_label = capital_allocation_pattern(
+                    cfo=cfo if cfo is not None else 0,
+                    cfi=cfi if cfi is not None else 0,
+                    cff=cff if cff is not None else 0,
+                    cfo_pat_ratio=cfo_pat_ratio,
+                )
+
+            rows.append({
+                "company_id": company_id,
+                "year": year,
+                "cfo_sign": cfo_sign,
+                "cfi_sign": cfi_sign,
+                "cff_sign": cff_sign,
+                "pattern_label": pattern_label,
+            })
+
+    report = pd.DataFrame(rows)
+    if not report.empty:
+        report["year"] = report["year"].astype(str)
+        report = report.sort_values(["company_id", "year"]).reset_index(drop=True)
+    return report
 
 
 def _project_root() -> Path:
@@ -290,7 +465,35 @@ def generate_cashflow_intelligence(
 
     xlsx_path.parent.mkdir(parents=True, exist_ok=True)
     alerts_path.parent.mkdir(parents=True, exist_ok=True)
+
+    cashflow_report = build_capital_allocation_report(
+        cashflow_df=cashflow,
+        company_ids=sorted(set(companies["company_id"])),
+        years=sorted(set(cashflow["year"]).union(set(profit["year"])).union(set(balance["year"]))),
+        profit_df=profit,
+    )
+    capital_output_path = root / "output" / "capital_allocation.csv"
+    export_capital_allocation(cashflow_report, output_file=str(capital_output_path))
+
+    latest_year = None
+    if not cashflow_report.empty:
+        valid_years = [str(y) for y in cashflow_report["year"].dropna().astype(str) if str(y).strip() and str(y).strip() != "nan"]
+        if valid_years:
+            latest_year = sorted(valid_years)[-1]
+    distribution_summary = summarize_pattern_distribution(cashflow_report, latest_year=latest_year)
+    distribution_df = pd.DataFrame(
+        [{"latest_year": latest_year, **distribution_summary}]
+    )
+    distribution_df.to_csv(root / "output" / "pattern_distribution_latest_year.csv", index=False)
+
+    pattern_changes = build_pattern_change_report(cashflow_report)
+    pattern_changes.to_csv(root / "output" / "pattern_changes.csv", index=False)
+
+    latest_patterns = cashflow_report.sort_values(["company_id", "year"]).drop_duplicates(subset=["company_id"], keep="last")
+    latest_patterns_map = latest_patterns.set_index("company_id")["pattern_label"]
+    result["capital_allocation_pattern"] = result["company_id"].map(latest_patterns_map)
     result.to_excel(xlsx_path, index=False)
+
     distress_df = pd.DataFrame(distress_rows)
     if not distress_df.empty:
         distress_df.to_csv(alerts_path, index=False)
