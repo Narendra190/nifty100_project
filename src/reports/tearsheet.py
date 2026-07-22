@@ -474,3 +474,144 @@ def generate_batch_tearsheets(company_ids: Optional[List[str]] = None, db_path: 
         generate_tearsheet(company_id, output_path=str(out_path), db_path=db_path)
         paths.append(out_path)
     return paths
+
+
+def generate_combined_tearsheets(company_ids: Optional[List[str]] = None, db_path: Optional[str] = None, output_file: Optional[str] = None, min_years: int = 3) -> dict:
+    root = _project_root()
+    out_file = Path(output_file) if output_file else root / "reports" / "tearsheets" / "_tearsheet.pdf"
+    out_file.parent.mkdir(parents=True, exist_ok=True)
+
+    companies, ratios, cashflow, balance = _load_company_data(db_path=db_path)
+
+    if company_ids is None:
+        company_ids = sorted(ratios["company_id"].unique().tolist())
+
+    try:
+        from PyPDF2 import PdfWriter, PdfReader
+        _has_pypdf2 = True
+    except Exception:
+        _has_pypdf2 = False
+    # If PyPDF2 not available, fallback to building combined doc via reportlab
+    temp_folder = root / "output" / "tearsheets"
+    temp_folder.mkdir(parents=True, exist_ok=True)
+
+    skipped = []
+    generated = []
+    for company_id in company_ids:
+        rows = ratios[ratios["company_id"] == str(company_id)]
+        if rows["year"].dropna().nunique() < min_years:
+            skipped.append(str(company_id))
+            continue
+        out_path = temp_folder / f"{company_id}_tearsheet.pdf"
+        try:
+            generate_tearsheet(str(company_id), output_path=str(out_path), db_path=db_path)
+            generated.append(out_path)
+            # also copy individual PDF to reports/tearsheets for directory listing
+            reports_dir = root / "reports" / "tearsheets"
+            reports_dir.mkdir(parents=True, exist_ok=True)
+            try:
+                import shutil
+                shutil.copy(str(out_path), str(reports_dir / out_path.name))
+            except Exception:
+                pass
+        except Exception:
+            skipped.append(str(company_id))
+
+    # Merge PDFs if PyPDF2 available
+    if _has_pypdf2:
+        try:
+            writer = PdfWriter()
+            for p in generated:
+                reader = PdfReader(str(p))
+                for page in reader.pages:
+                    writer.add_page(page)
+            with open(out_file, "wb") as fh:
+                writer.write(fh)
+        except Exception:
+            # fallback: copy first generated if present
+            if generated:
+                import shutil
+                shutil.copy(generated[0], out_file)
+    else:
+        # PyPDF2 not installed — copy first generated as best-effort combined output
+        if generated:
+            import shutil
+            shutil.copy(generated[0], out_file)
+
+    # write skipped list
+    skipped_csv = root / "output" / "skipped_tearsheets.csv"
+    skipped_csv.parent.mkdir(parents=True, exist_ok=True)
+    with open(skipped_csv, "w", encoding="utf-8") as fh:
+        fh.write("ticker\n")
+        for s in skipped:
+            fh.write(f"{s}\n")
+
+    return {"combined_pdf": out_file, "generated_count": len(generated), "skipped": skipped}
+
+
+def generate_sector_reports(db_path: Optional[str] = None, output_dir: Optional[str] = None) -> List[Path]:
+    root = _project_root()
+    out_dir = Path(output_dir) if output_dir else root / "reports" / "sector"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    companies, ratios, cashflow, balance = _load_company_data(db_path=db_path)
+    # load sectors table from DB and join to companies
+    db_file = Path(db_path) if db_path else root / "nifty100.db"
+    conn = sqlite3.connect(db_file)
+    try:
+        sectors_df = pd.read_sql_query("SELECT * FROM sectors_clean", conn)
+    finally:
+        conn.close()
+
+    if "company_id" not in sectors_df.columns or "broad_sector" not in sectors_df.columns:
+        raise RuntimeError("sectors_clean table missing expected columns")
+
+    companies = companies.merge(sectors_df[["company_id", "broad_sector"]], on="company_id", how="left")
+    sectors = companies["broad_sector"].dropna().unique().tolist()
+    paths = []
+    for sector in sectors:
+        sect_companies = companies[companies["broad_sector"] == sector]
+        rows = []
+        for _, r in sect_companies.iterrows():
+            cid = str(r["company_id"])
+            latest = ratios[ratios["company_id"] == cid].sort_values("year_dt").tail(1)
+            if latest.empty:
+                continue
+            latest = latest.iloc[0]
+            row = [r.get("company_name", cid), r.get("ticker", cid), latest.get("revenue") if "revenue" in latest.index else latest.get("sales"), latest.get("net_profit"), latest.get("return_on_equity_pct"), latest.get("debt_to_equity"), latest.get("earnings_per_share") if "earnings_per_share" in latest.index else None, latest.get("dividend_payout_ratio_pct") if "dividend_payout_ratio_pct" in latest.index else None]
+            rows.append(row)
+
+        # sector median KPIs
+        sector_ratios = ratios[ratios["company_id"].isin(sect_companies["company_id"].astype(str))]
+        medians = {}
+        for col in ["return_on_equity_pct", "debt_to_equity", "earnings_per_share", "revenue", "net_profit"]:
+            if col in sector_ratios.columns:
+                medians[col] = float(sector_ratios[col].dropna().median()) if not sector_ratios[col].dropna().empty else None
+            else:
+                medians[col] = None
+
+        # build PDF
+        story = []
+        styles = getSampleStyleSheet()
+        story.append(Paragraph(f"<b>{sector} Sector Report</b>", _title_style()))
+        story.append(Spacer(1, 0.08 * inch))
+        med_table = [["KPI", "Median"], ["ROE", f"{medians.get('return_on_equity_pct'):.2f}" if medians.get('return_on_equity_pct') is not None else "N/A"], ["Debt/Equity", f"{medians.get('debt_to_equity'):.2f}" if medians.get('debt_to_equity') is not None else "N/A"], ["EPS", f"{medians.get('earnings_per_share'):.2f}" if medians.get('earnings_per_share') is not None else "N/A"], ["Revenue", f"{medians.get('revenue'):.0f}" if medians.get('revenue') is not None else "N/A"]]
+        t = Table(med_table, colWidths=[2.5 * inch, 3.5 * inch])
+        t.setStyle(TableStyle([("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#D9E2F3")), ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#EEF4FF"))]))
+        story.append(t)
+        story.append(Spacer(1, 0.12 * inch))
+
+        # company list table header
+        comp_table = [["Company", "Ticker", "Revenue", "Net Profit", "ROE", "D/E", "EPS", "Payout%"]]
+        for r in rows:
+            comp_table.append([r[0], r[1], f"{r[2]:,.0f}" if r[2] is not None else "N/A", f"{r[3]:,.0f}" if r[3] is not None else "N/A", f"{r[4]:.1f}%" if r[4] is not None else "N/A", f"{r[5]:.2f}x" if r[5] is not None else "N/A", f"{r[6]:.2f}" if r[6] is not None else "N/A", f"{r[7]:.1f}%" if r[7] is not None else "N/A"])
+
+        comp_t = Table(comp_table, colWidths=[2.2*inch, 0.8*inch, 1*inch, 1*inch, 0.7*inch, 0.7*inch, 0.7*inch, 0.7*inch])
+        comp_t.setStyle(TableStyle([("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#D9E2F3")), ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#0B3D91")), ("TEXTCOLOR", (0,0), (-1,0), colors.white)]))
+        story.append(comp_t)
+
+        out_path = out_dir / f"{sector}_report.pdf"
+        doc = SimpleDocTemplate(str(out_path), pagesize=letter, rightMargin=MARGIN, leftMargin=MARGIN, topMargin=MARGIN, bottomMargin=MARGIN)
+        doc.build(story)
+        paths.append(out_path)
+
+    return paths
