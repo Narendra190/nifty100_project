@@ -314,6 +314,210 @@ def _build_waterfall_image(data) -> io.BytesIO:
     return buffer
 
 
+def _trend_arrow(current_value, previous_value) -> str:
+    if current_value is None or previous_value is None:
+        return "→"
+    try:
+        current = float(current_value)
+        previous = float(previous_value)
+    except (TypeError, ValueError):
+        return "→"
+    if pd.isna(current) or pd.isna(previous):
+        return "→"
+    if previous == 0:
+        if current > 0:
+            return "↑"
+        if current < 0:
+            return "↓"
+        return "→"
+    change = (current - previous) / previous
+    if abs(change) <= 0.02:
+        return "→"
+    return "↑" if change > 0 else "↓"
+
+
+def _format_kpi_value(metric_name: str, value) -> str:
+    if value is None:
+        return "N/A"
+    try:
+        numeric_value = float(value)
+    except (TypeError, ValueError):
+        return str(value)
+    if metric_name in {"Revenue", "Net Profit", "CFO"}:
+        return f"{numeric_value:,.0f}"
+    if metric_name in {"ROE", "Operating Margin"}:
+        return f"{numeric_value:.1f}%"
+    if metric_name == "Debt/Equity":
+        return f"{numeric_value:.2f}x"
+    return str(value)
+
+
+def _build_portfolio_kpis(company_id: str, ratios: pd.DataFrame, cashflow: pd.DataFrame, balance: pd.DataFrame) -> list[tuple]:
+    ratio_rows = ratios[ratios["company_id"].astype(str) == str(company_id)].copy()
+    cash_rows = cashflow[cashflow["company_id"].astype(str) == str(company_id)].copy()
+    balance_rows = balance[balance["company_id"].astype(str) == str(company_id)].copy()
+
+    if "year_dt" not in ratio_rows.columns:
+        ratio_rows["year_dt"] = ratio_rows["year"].apply(_parse_year)
+    if "year_dt" not in cash_rows.columns:
+        cash_rows["year_dt"] = cash_rows["year"].apply(_parse_year)
+    if "year_dt" not in balance_rows.columns:
+        balance_rows["year_dt"] = balance_rows["year"].apply(_parse_year)
+
+    ratio_rows = ratio_rows.sort_values("year_dt", kind="mergesort")
+    cash_rows = cash_rows.sort_values("year_dt", kind="mergesort")
+    balance_rows = balance_rows.sort_values("year_dt", kind="mergesort")
+
+    latest_ratio = ratio_rows.iloc[-1] if not ratio_rows.empty else None
+    prev_ratio = ratio_rows.iloc[-2] if len(ratio_rows) >= 2 else None
+    latest_cash = cash_rows.iloc[-1] if not cash_rows.empty else None
+    prev_cash = cash_rows.iloc[-2] if len(cash_rows) >= 2 else None
+
+    revenue_col = "sales" if "sales" in ratio_rows.columns else "revenue" if "revenue" in ratio_rows.columns else None
+    profit_col = "net_profit" if "net_profit" in ratio_rows.columns else "profit_after_tax" if "profit_after_tax" in ratio_rows.columns else None
+
+    def _get_value(row, *candidates):
+        if row is None:
+            return None
+        for candidate in candidates:
+            if candidate in row.index and pd.notna(row.get(candidate)):
+                return row.get(candidate)
+        return None
+
+    revenue_value = _get_value(latest_ratio, revenue_col) if revenue_col else None
+    revenue_prev = _get_value(prev_ratio, revenue_col) if revenue_col else None
+    net_profit_value = _get_value(latest_ratio, profit_col) if profit_col else None
+    net_profit_prev = _get_value(prev_ratio, profit_col) if profit_col else None
+    roe_value = _get_value(latest_ratio, "return_on_equity_pct")
+    roe_prev = _get_value(prev_ratio, "return_on_equity_pct")
+    op_margin_value = _get_value(latest_ratio, "operating_profit_margin_pct")
+    op_margin_prev = _get_value(prev_ratio, "operating_profit_margin_pct")
+    debt_value = _get_value(latest_ratio, "debt_to_equity")
+    debt_prev = _get_value(prev_ratio, "debt_to_equity")
+    cfo_value = _get_value(latest_cash, "operating_activity")
+    cfo_prev = _get_value(prev_cash, "operating_activity")
+
+    return [
+        ("Revenue", revenue_value, _trend_arrow(revenue_value, revenue_prev)),
+        ("Net Profit", net_profit_value, _trend_arrow(net_profit_value, net_profit_prev)),
+        ("ROE", roe_value, _trend_arrow(roe_value, roe_prev)),
+        ("Debt/Equity", debt_value, _trend_arrow(debt_value, debt_prev)),
+        ("Operating Margin", op_margin_value, _trend_arrow(op_margin_value, op_margin_prev)),
+        ("CFO", cfo_value, _trend_arrow(cfo_value, cfo_prev)),
+    ]
+
+
+def generate_portfolio_summary_pdf(
+    companies: pd.DataFrame,
+    ratios: pd.DataFrame,
+    cashflow: pd.DataFrame,
+    balance: pd.DataFrame,
+    output_path: Optional[str] = None,
+    company_ids: Optional[List[str]] = None,
+) -> Path:
+    root = _project_root()
+    output_file = Path(output_path) if output_path else root / "reports" / "portfolio" / "portfolio_summary.pdf"
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+
+    companies = companies.copy()
+    companies["company_id"] = companies["company_id"].astype(str)
+    if "ticker" not in companies.columns:
+        companies["ticker"] = companies["company_id"]
+
+    if company_ids is None:
+        company_ids = sorted(companies["company_id"].astype(str).unique().tolist())
+
+    def _company_sort_key(company_id: str) -> tuple:
+        match = companies[companies["company_id"] == company_id]
+        if match.empty:
+            return (company_id.lower(), company_id.lower(), company_id)
+        ticker = match.iloc[0].get("ticker", company_id)
+        name = match.iloc[0].get("company_name", company_id)
+        return (str(ticker).lower(), str(name).lower(), str(company_id))
+
+    ordered_ids = sorted([str(company_id) for company_id in company_ids], key=_company_sort_key)
+
+    story = []
+    styles = getSampleStyleSheet()
+    styles.add(ParagraphStyle("PortfolioTitle", fontName="Helvetica-Bold", fontSize=16, leading=18, textColor=colors.HexColor("#0B3D91")))
+    styles.add(ParagraphStyle("PortfolioBody", fontName="Helvetica", fontSize=10, leading=12, textColor=colors.HexColor("#222222")))
+
+    for index, company_id in enumerate(ordered_ids):
+        company_row = companies[companies["company_id"] == company_id]
+        company_name = company_row.iloc[0].get("company_name", company_id) if not company_row.empty else company_id
+        ticker = company_row.iloc[0].get("ticker", company_id) if not company_row.empty else company_id
+        sector = None
+        for candidate in ["sector", "broad_sector", "industry"]:
+            if candidate in company_row.columns and not company_row.empty:
+                value = company_row.iloc[0].get(candidate)
+                if pd.notna(value) and str(value).strip():
+                    sector = str(value)
+                    break
+        if sector is None:
+            sector = "Unknown"
+
+        story.append(Paragraph(f"<b>{company_name}</b>", styles["PortfolioTitle"]))
+        story.append(Paragraph(f"<font color='#0B3D91'>{ticker}</font> • Sector: {sector}", styles["PortfolioBody"]))
+        story.append(Spacer(1, 0.08 * inch))
+
+        kpis = _build_portfolio_kpis(company_id, ratios, cashflow, balance)
+        table_data = [["KPI", "Value", "Trend"]]
+        for metric_name, value, arrow in kpis:
+            table_data.append([metric_name, _format_kpi_value(metric_name, value), arrow])
+
+        table = Table(table_data, colWidths=[1.8 * inch, 2.4 * inch, 0.5 * inch], repeatRows=1)
+        table.setStyle(TableStyle([
+            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#0B3D91")),
+            ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+            ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#D9E2F3")),
+            ("ALIGN", (1, 1), (-1, -1), "RIGHT"),
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ]))
+        story.append(table)
+        if index < len(ordered_ids) - 1:
+            story.append(PageBreak())
+
+    doc = SimpleDocTemplate(str(output_file), pagesize=letter, rightMargin=MARGIN, leftMargin=MARGIN, topMargin=MARGIN, bottomMargin=MARGIN)
+    doc.build(story)
+    return output_file
+
+
+def generate_portfolio_summary_report(
+    db_path: Optional[str] = None,
+    output_path: Optional[str] = None,
+    company_ids: Optional[List[str]] = None,
+) -> Path:
+    root = _project_root()
+    db_file = Path(db_path) if db_path else root / "nifty100.db"
+    if not db_file.exists():
+        raise FileNotFoundError(f"Database not found: {db_file}")
+
+    conn = sqlite3.connect(db_file)
+    try:
+        companies = pd.read_sql_query("SELECT * FROM companies_clean", conn)
+        ratios = pd.read_sql_query("SELECT * FROM financial_ratios", conn)
+        cashflow = pd.read_sql_query("SELECT * FROM cashflow_clean", conn)
+        balance = pd.read_sql_query("SELECT * FROM balancesheet_clean", conn)
+        sectors = pd.read_sql_query("SELECT * FROM sectors_clean", conn)
+    finally:
+        conn.close()
+
+    if "company_id" in sectors.columns and "broad_sector" in sectors.columns and "company_id" in companies.columns:
+        companies = companies.merge(sectors[["company_id", "broad_sector"]], on="company_id", how="left")
+        if "sector" not in companies.columns:
+            companies["sector"] = companies["broad_sector"]
+
+    return generate_portfolio_summary_pdf(
+        companies=companies,
+        ratios=ratios,
+        cashflow=cashflow,
+        balance=balance,
+        output_path=str(output_path) if output_path else str(root / "reports" / "portfolio" / "portfolio_summary.pdf"),
+        company_ids=company_ids,
+    )
+
+
 def _build_pdf_story(company_id: str, companies: pd.DataFrame, ratios: pd.DataFrame, cashflow: pd.DataFrame, balance: pd.DataFrame, output_path: Path) -> None:
     metrics = {
         "company_id": company_id,

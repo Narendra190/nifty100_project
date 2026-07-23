@@ -1,7 +1,10 @@
 from pathlib import Path
 import sys
 
-from src.reports.tearsheet import generate_combined_tearsheets, generate_sector_reports
+root = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(root))
+
+from src.reports.tearsheet import generate_combined_tearsheets, generate_sector_reports, generate_portfolio_summary_report
 
 root = Path(__file__).resolve().parents[1]
 
@@ -12,6 +15,10 @@ print('Combined result:', res)
 print('Generating sector reports...')
 sectors = generate_sector_reports()
 print('Sector reports generated:', len(sectors))
+
+print('Generating portfolio summary PDF...')
+portfolio_pdf = generate_portfolio_summary_report()
+print('Portfolio report generated:', portfolio_pdf)
 
 # verify count of files in reports/tearsheets
 tearsheet_dir = root / 'reports' / 'tearsheets'
