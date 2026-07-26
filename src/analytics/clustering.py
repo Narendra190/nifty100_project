@@ -6,9 +6,7 @@ import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-# ============================================================
 # STEP 1 - Load Data
-# ============================================================
 
 conn = sqlite3.connect("nifty100.db")
 
@@ -41,9 +39,7 @@ print(df.columns.tolist())
 print("\nShape:")
 print(df.shape)
 
-# ============================================================
 # STEP 2 - Latest Record Per Company
-# ============================================================
 
 df_latest = (
     df.sort_values("year")
@@ -65,9 +61,7 @@ print(df_latest["company_id"].nunique())
 print("\nMissing Values:")
 print(df_latest.isnull().sum())
 
-# ============================================================
 # STEP 3 - Select Features
-# ============================================================
 
 features = [
     "return_on_equity_pct",
@@ -80,9 +74,7 @@ features = [
 print("\nSelected Features:")
 print(df_latest[features].head())
 
-# ============================================================
 # STEP 4 - Handle Missing Values
-# ============================================================
 
 print("\n" + "=" * 60)
 print("Handling Missing Values")
@@ -102,9 +94,7 @@ for col in features:
 print("\nMissing values after imputation:")
 print(df_latest[features + ["broad_sector"]].isnull().sum())
 
-# ============================================================
 # STEP 5 - Handle Extreme Outliers
-# ============================================================
 
 print("\n" + "=" * 60)
 print("Handling Extreme ROE Values")
@@ -117,9 +107,7 @@ df_latest["return_on_equity_pct"] = (
 print("Maximum ROE after clipping:",
       df_latest["return_on_equity_pct"].max())
 
-# ============================================================
 # STEP 6 - Feature Scaling
-# ============================================================
 
 print("\n" + "=" * 60)
 print("Scaling Features")
@@ -142,9 +130,7 @@ print(scaled_df.mean())
 print("\nScaled Feature Standard Deviations:")
 print(scaled_df.std())
 
-# ============================================================
 # STEP 7 - KMeans Clustering
-# ============================================================
 
 print("\n" + "=" * 60)
 print("Running KMeans")
@@ -163,9 +149,7 @@ print(df_latest[["company_id", "cluster_id"]].head())
 print("\nCluster Counts:")
 print(df_latest["cluster_id"].value_counts().sort_index())
 
-# ============================================================
 # STEP 8 - Elbow Plot
-# ============================================================
 
 print("\n" + "=" * 60)
 print("Generating Elbow Plot")
@@ -196,9 +180,7 @@ plt.close()
 
 print("Saved: reports/elbow_plot.png")
 
-# ============================================================
 # STEP 9 - Distance from Centroid
-# ============================================================
 
 print("\n" + "=" * 60)
 print("Calculating Distances")
@@ -217,25 +199,20 @@ print(
     ].head()
 )
 
-# ============================================================
 # STEP 10 - Cluster Names
-# ============================================================
 
 cluster_names = {
-    0: "Stable Performers",
-    1: "Highly Leveraged Growth",
-    2: "Exceptional ROE",
-    3: "High Margin Leaders",
-    4: "Cash Burners"
+    0: "High-Quality Compounders",
+    1: "Emerging Growth",
+    2: "Defensive Dividend Payers",
+    3: "Value Cyclicals",
+    4: "Distressed or Turnaround"
 }
 
 df_latest["cluster_name"] = (
     df_latest["cluster_id"].map(cluster_names)
 )
-
-# ============================================================
 # STEP 11 - Cluster Centroids
-# ============================================================
 
 centroids = pd.DataFrame(
     scaler.inverse_transform(kmeans.cluster_centers_),
@@ -245,9 +222,7 @@ centroids = pd.DataFrame(
 print("\nCluster Centroids:")
 print(centroids)
 
-# ============================================================
 # STEP 12 - Export Results
-# ============================================================
 
 os.makedirs("output", exist_ok=True)
 
