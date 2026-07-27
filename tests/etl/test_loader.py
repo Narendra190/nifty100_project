@@ -1,68 +1,54 @@
-import sqlite3
-import pandas as pd
-import tempfile
 import os
+import sqlite3
+import sys
+import pandas as pd
 
-from src.loader import load_excel_to_table
+sys.path.append(os.path.abspath("src"))
 
-
-def test_load_excel_returns_row_count():
-
-    df = pd.DataFrame({
-        "A": [1, 2],
-        "B": [3, 4]
-    })
-
-    temp = tempfile.NamedTemporaryFile(suffix=".xlsx", delete=False)
-    temp.close()
-
-    try:
-        df.to_excel(temp.name, index=False)
-
-        conn = sqlite3.connect(":memory:")
-
-        rows = load_excel_to_table(
-            temp.name,
-            "sample",
-            conn
-        )
-
-        assert rows == 2
-
-        conn.close()
-
-    finally:
-        os.remove(temp.name)
+from loader import load_excel_to_table
 
 
-def test_table_created():
+def test_load_excel_to_table(tmp_path):
+
+    excel = tmp_path / "sample.xlsx"
+    db = tmp_path / "test.db"
 
     df = pd.DataFrame({
-        "A": [1]
+        "A":[1,2],
+        "B":[3,4]
     })
 
-    temp = tempfile.NamedTemporaryFile(suffix=".xlsx", delete=False)
-    temp.close()
+    df.to_excel(excel,index=False)
 
-    try:
+    conn = sqlite3.connect(db)
 
-        df.to_excel(temp.name, index=False)
+    rows = load_excel_to_table(excel,"sample",conn)
 
-        conn = sqlite3.connect(":memory:")
+    assert rows == 2
 
-        load_excel_to_table(
-            temp.name,
-            "sample",
-            conn
-        )
+    loaded = pd.read_sql("SELECT * FROM sample",conn)
 
-        cursor = conn.cursor()
+    assert len(loaded) == 2
 
-        cursor.execute("SELECT COUNT(*) FROM sample")
+    conn.close()
 
-        assert cursor.fetchone()[0] == 1
 
-        conn.close()
+def test_table_columns(tmp_path):
 
-    finally:
-        os.remove(temp.name)
+    excel = tmp_path/"sample.xlsx"
+    db = tmp_path/"test.db"
+
+    pd.DataFrame({
+        "Name":["A"],
+        "Age":[20]
+    }).to_excel(excel,index=False)
+
+    conn = sqlite3.connect(db)
+
+    load_excel_to_table(excel,"people",conn)
+
+    loaded = pd.read_sql("SELECT * FROM people",conn)
+
+    assert list(loaded.columns)==["Name","Age"]
+
+    conn.close()
